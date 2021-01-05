@@ -91,6 +91,18 @@
       })
     }
 
+     function searchattack(){
+      let level = parseInt($("#attack").val(), 10);
+      let TestDataClass = ncmb.DataStore(db);
+      TestDataClass
+      .equalTo("attack", attack)
+      .fetchAll()
+      .then(function(results){
+        showResults(results);
+      })
+    }
+
+
     function searchLevelLT(){
       let level = parseInt($("#level").val(), 10);
       let TestDataClass = ncmb.DataStore(db);

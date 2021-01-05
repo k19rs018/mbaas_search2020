@@ -92,7 +92,7 @@
     }
 
      function searchattack(){
-      let level = parseInt($("#attack").val(), 10);
+      let attack = parseInt($("#attack").val(), 10);
       let TestDataClass = ncmb.DataStore(db);
       TestDataClass
       .equalTo("attack", attack)
@@ -113,6 +113,18 @@
         showResults(results);
       })
     }
+
+     function searchattacklLT(){
+      let attack = parseInt($("#attack").val(), 10);
+      let TestDataClass = ncmb.DataStore(db);
+      TestDataClass
+      .lessThan("attack", attack)
+      .fetchAll()
+      .then(function(results){
+        showResults(results);
+      })
+    }
+
 
      function searchLevelGT(){
       let level = parseInt($("#level").val(), 10);
